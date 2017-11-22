@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AGBTR</title>
+        <meta charset = "utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--        Css Files-->
+        <link rel="stylesheet" href="main.css">
+        <!-- jquery cdn -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Materialize css cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+    </head>
+    <body>
+        
+        <div class="row log-in-form">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="email" type="email" class="validate">
+                        <label for="email" data-error="wrong" data-success="right">Email</label>
+                    </div>
+<!--                <div class="row">-->
+                    <div class="input-field col s6">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+<!--                </div>-->
+                </div>
+                <a class="waves-effect waves-light btn login-btn">Log In</a>
+            </form>
+        </div>
+        
+        <div class="row sign-up-form">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input id="email" type="email" class="validate">
+                        <label for="email" data-error="wrong" data-success="right">Email</label>
+                    </div>
+<!--                <div class="row">-->
+                    <div class="input-field col s4">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+<!--                </div>-->
+                    <div class="input-field col s4">
+                        <input id="user_name" type="text" class="validate">
+                        <label for="user_name">Username</label>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+<!--                <div class="row">-->
+                    <div class="input-field col s4 select-menu">
+                        <select>
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="Reader">Reader</option>
+                            <option value="Author">Author</option>
+                        </select>
+                        <label>Account Type</label>
+                    </div>
+                </div>
+                <a class="waves-effect waves-light btn signup-btn">Sign Up</a>
+            </form>
+        </div> 
+        
+<!--
+        <div class="row personal-details-form">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                    <div class="input-field col s4 select-menu">
+                        <select>
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="User">User</option>
+                            <option value="Author">Author</option>
+                        </select>
+                        <label>Account Type</label>
+                    </div>
+                </div>
+                <a class="waves-effect waves-light btn ok-btn">OK</a>
+            </form>
+        </div> 
+-->
+        
+        
+        <div class="row">
+            <div class="col s12">
+                <a class="waves-effect waves-light btn signout-btn">Sign Out</a>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col s12">
+                <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger view-profile-btn" href="#modal1">View Profile</a>
+                
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <h4>Your Profile</h4>
+                        <div class="modal-name"></div>
+                        <div class="modal-email"></div>
+                        <div class="modal-account-type"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col s12">
+                <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger add-book-btn" href="#modal2">Add Book</a>
+                
+                <!-- Modal Structure -->
+                <div id="modal2" class="modal">
+                    <div class="modal-content">
+                        <form>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="book_title" type="text" class="validate">
+                                    <label for="book_title">Book Title</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <textarea id="book-desc" class="materialize-textarea"></textarea>
+                                    <label for="book-desc">Book Description</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6 add-book-mood-select">
+                                    <select multiple>
+                                        <option value="" disabled selected>Choose your options</option>
+                                        <option value="Happy">Happy</option>
+                                        <option value="Sad">Sad</option>
+                                        <option value="Feel Good">Feel Good</option>
+                                        <option value="Romantic">Romantic</option>
+                                    </select>
+                                    <label>Moods</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6 add-book-genre-select">
+                                    <select multiple>
+                                        <option value="" disabled selected>Choose your options</option>
+                                        <option value="Biography">Biography</option>
+                                        <option value="Fantasy">Fantasy</option>
+                                        <option value="Erotic">Erotic</option>
+                                        <option value="Horror">Horror</option>
+                                        <option value="Mystery">Mystery</option>
+                                    </select>
+                                    <label>Genres</label>
+                                </div>
+                            </div>
+                            <a class="waves-effect waves-light btn final-add-book-btn">Add</a>
+                        </form>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col s12">
+                <a class="waves-effect waves-light btn show-all-books-btn">Show all books</a>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col s12">
+                <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger filter-btn" href="#modal3">Filter</a>
+                
+                <!-- Modal Structure -->
+                <div id="modal3" class="modal">
+                    <div class="modal-content">
+                        <h4>Filter</h4>
+                        <form>
+                            <div class="row">
+                                <div class="input-field col s6 filter-genre-select">
+                                    <select multiple>
+                                        <option value="" disabled selected>Choose your options</option>
+                                        <option value="Biography">Biography</option>
+                                        <option value="Fantasy">Fantasy</option>
+                                        <option value="Erotic">Erotic</option>
+                                        <option value="Horror">Horror</option>
+                                        <option value="Mystery">Mystery</option>
+                                    </select>
+                                    <label>By Genre</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6 filter-mood-select">
+                                    <select multiple>
+                                        <option value="" disabled selected>Choose your options</option>
+                                        <option value="Happy">Happy</option>
+                                        <option value="Sad">Sad</option>
+                                        <option value="Feel Good">Feel Good</option>
+                                        <option value="Romantic">Romantic</option>
+                                    </select>
+                                    <label>By Moods</label>
+                                </div>
+                            </div>
+                            <a class="waves-effect waves-light btn apply-filer-btn">Apply Filter</a>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="col s12">
+                <div class="row books-div">
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+        <script>
+            $(document).ready(function() {
+                $('select').material_select();
+                $('.modal').modal();
+            });
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyD-3IrlDz1oEBBds6r5cQxc9InjvXg0dPo",
+                authDomain: "agoodbooktoread-3de2a.firebaseapp.com",
+                databaseURL: "https://agoodbooktoread-3de2a.firebaseio.com",
+                projectId: "agoodbooktoread-3de2a",
+                storageBucket: "",
+                messagingSenderId: "424287975429"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script src="auth.js"></script>
+    </body>
+</html>
