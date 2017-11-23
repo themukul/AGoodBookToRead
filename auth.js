@@ -170,6 +170,7 @@ $(document).ready(function() {
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
+//      window.location.assign("profile.html");
     // User is signed in.
       console.log('Observer -- Signed In');
       $('.signout-btn').css('display', 'inline-block');
@@ -318,7 +319,7 @@ function getAllBooks(){
                             cards += '<p>' + arrayOfBooks[i].bookDesc + '</p>';
                             cards += '</div>';
                             cards += '<div class="card-action">';
-                            cards += '<a href="javascript:void(0)" id="card-action-fav">Favourite</a>';
+                            cards += '<a class="btn card-action-fav" onclick="addFav(this)">Favourite</a>';
                             cards += '<a class="btn card-action-star" onclick="updateStar(this)">Star</a>';
                             cards += '</div>';
                             cards += '</div>';
@@ -345,7 +346,7 @@ function getAllBooks(){
                                 cards += '<p>' + arrayOfBooks[i].bookDesc + '</p>';
                                 cards += '</div>';
                                 cards += '<div class="card-action">';
-                                cards += '<a href="javascript:void(0)" id="card-action-fav">Favourite</a>';
+                                cards += '<a class="btn card-action-fav" onclick="addFav(this)">Favourite</a>';
                                 cards += '<a class="btn card-action-star" onclick="updateStar(this)">Star</a>';
                                 cards += '</div>';
                                 cards += '</div>';
@@ -369,7 +370,7 @@ function getAllBooks(){
                 cards += '<p>' + arrayOfBooks[i].bookDesc + '</p>';
                 cards += '</div>';
                 cards += '<div class="card-action">';
-                cards += '<a href="javascript:void(0)" id="card-action-fav">Favourite</a>';
+                cards += '<a class="btn card-action-fav" onclick="addFav(this)">Favourite</a>';
                 cards += '<a class="btn card-action-star" onclick="updateStar(this)">Star</a>';
                 cards += '</div>';
                 cards += '</div>';
@@ -420,24 +421,32 @@ function updateStar(bla){
     }, 5000);
 }
 
-function addFav(){
-    var bookName = this.$('card-title').text();
+function addFav(bla){
+    console.log('inside add fav');
+    var bookName = $(bla).parent().parent().children('.card-content').children('.card-title').text();
     var user = firebase.auth().currentUser;
-    var favsArray = [];
+    var favsArray;
     if (user != null) {
         var uid = user.displayName;
         var userRef = firebase.database().ref('/users/' + uid);
         userRef.once('value').then(function(snapshot) {
             favsArray = snapshot.val().favs;
-            favsArray.push(bookName);
         });
     }
-    
-    var userKey = user.displayName;
-    var data = {
-        favs : favsArray
-    }
-    var updates = {};
-    updates['/users/' + userKey] = data;
-    firebase.database().ref().update(updates);
+    setTimeout(function() {
+        console.log('old array ' + favsArray);
+        if(favsArray == undefined){
+            favsArray = [bookName];
+        }else{
+            favsArray.push(bookName);
+        }
+        console.log('new array ' + favsArray);
+        var userKey = user.displayName;
+        //    var data = {
+        //        favs : favsArray
+        //    }
+        //    var updates = {};
+        //    updates['/users/' + userKey] = data;
+        firebase.database().ref('/users/' + userKey + '/favs').set(favsArray);
+    }, 5000);
 }

@@ -1,0 +1,15 @@
+body{
+    background-color: #E7E7E7;
+}
+
+.heading{
+    font-family: 'Dosis', sans-serif;
+    font-size : 54px;
+    text-align: center;
+/*    letter-spacing: 3px;*/
+}
+
+.heading span{
+    font-family: 'Lobster', cursive;
+    letter-spacing: normal;
+} 
