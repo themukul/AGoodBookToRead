@@ -170,7 +170,7 @@ $(document).ready(function() {
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-//      window.location.assign("profile.html");
+      window.location.assign("profile.html");
     // User is signed in.
       console.log('Observer -- Signed In');
       $('.signout-btn').css('display', 'inline-block');

@@ -119,11 +119,13 @@
             </div>
         </div>
         
+<!--
         <div class="row">
             <div class="col s12">
                 <a class="waves-effect waves-light btn show-all-books-btn">Show all books</a>
             </div>
         </div>
+-->
         
         <div class="row">
             <div class="col s12">
@@ -188,18 +190,15 @@
             });
         </script>
         <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-        <script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyD-3IrlDz1oEBBds6r5cQxc9InjvXg0dPo",
-                authDomain: "agoodbooktoread-3de2a.firebaseapp.com",
-                databaseURL: "https://agoodbooktoread-3de2a.firebaseio.com",
-                projectId: "agoodbooktoread-3de2a",
-                storageBucket: "",
-                messagingSenderId: "424287975429"
-            };
-            firebase.initializeApp(config);
-        </script>
-        <script src="auth.js"></script>
+        <script src="firebaseInit.js"></script>
+        <script src="profile.js"></script>
+        <script src="sign-out.js"></script>
+        <script src="view-profile.js"></script>
+        <script src="fetch-books.js"></script>
+        <script src="render-books.js"></script>
+        <script src="db-write-book.js"></script>
+        <script src="add-book.js"></script>
+        <script src="star-fav.js"></script>
+        
     </body>
 </html>
