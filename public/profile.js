@@ -36,3 +36,11 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
+//$(document).ready(function() {
+//    $('.tap-target').tapTarget('open');
+//    setTimeout(function() {
+//        $('.tap-target').tapTarget('close');
+//        
+//    }, 3000);
+//});
+//

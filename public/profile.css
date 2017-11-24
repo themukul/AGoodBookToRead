@@ -8,3 +8,30 @@ body{
     font-size : 22px;
     text-align: center;
 }
+
+.modal-account-type, .book-modal-author{
+    font-family: 'Lobster', cursive;
+    font-size : 25px;
+}
+
+.book-modal-author{
+    font-size: 20px;
+}
+
+.modal-name, .book-modal-name{
+    font-family: 'Roboto Slab', serif;
+}
+
+.fav-line, .book-modal-description{
+    font-family: 'Roboto Slab', serif;
+}
+
+.book-modal-description{
+    color: #4a4a4a;
+    font-size: 18px;
+}
+
+.book-modal-star{
+    color : #a4a4a4;
+    font-family: 'Roboto Slab', serif;
+}
