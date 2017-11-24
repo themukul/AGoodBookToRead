@@ -19,7 +19,7 @@ function getAllBooks(){
                     for(var k = 0 ; k < arrayOfBooks[i].moods.length ; k++){
                         if(moodsFilterArray[j] == arrayOfBooks[i].moods[k]){
                             cards += '<div class="col s4">'
-                            cards += '<div class="card blue-grey darken-1">';
+                            cards += '<div class="card indigo lighten-1">';
                             cards += '<div class="card-content white-text">';
                             cards += '<span class="card-title">' + arrayOfBooks[i].bookName + '</span>';
                             cards += '<span class="card-author"> by ' + arrayOfBooks[i].author + '</span>';
@@ -47,7 +47,7 @@ function getAllBooks(){
                         for(var k = 0 ; k < arrayOfBooks[i].genres.length ; k++){
                             if(genreFilterArray[j] == arrayOfBooks[i].genres[k]){
                                 cards += '<div class="col s4">'
-                                cards += '<div class="card blue-grey darken-1">';
+                                cards += '<div class="card indigo lighten-1">';
                                 cards += '<div class="card-content white-text">';
                                 cards += '<span class="card-title">' + arrayOfBooks[i].bookName + '</span>';
                                 cards += '<span class="card-author"> by ' + arrayOfBooks[i].author + '</span>';
@@ -72,7 +72,7 @@ function getAllBooks(){
             
             if(moodsFilterArray.length == 0 && genreFilterArray.length == 0){
                 cards += '<div class="col s4">'
-                cards += '<div class="card blue-grey darken-1">';
+                cards += '<div class="card indigo lighten-1">';
                 cards += '<div class="card-content white-text">';
                 cards += '<span class="card-title">' + arrayOfBooks[i].bookName + '</span>';
                 cards += '<span class="card-author"> by ' + arrayOfBooks[i].author + '</span>';
