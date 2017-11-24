@@ -182,6 +182,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   } else {
     // No user is signed in.
       console.log('Observer -- No Sign In');
+//      Materialize.toast('You have logged out!', 3000);
       $('.signout-btn').css('display', 'none');
       $('.view-profile-btn').css('display', 'none');
 //      $('.add-book-btn').css('display', 'none');

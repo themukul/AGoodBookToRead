@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <!--        Css Files-->
         <link rel="stylesheet" href="main.css">
-        <link rel="stylesheet" href="profile.css">
         <!-- jquery cdn -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Materialize css cdn -->
@@ -15,45 +14,97 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     </head>
     <body>
         
-        <div class="fixed-action-btn toolbar">
-            <a class="btn-floating btn-large red pulse">
-                <i class="large material-icons">account_circle</i>
-            </a>
-            <ul>
-                <li class="waves-effect waves-light"><a class="modal-trigger filter-btn" href="#modal3"><i class="material-icons">sort</i></a></li>
-                <li class="waves-effect waves-light"><a class="modal-trigger add-book-btn" href="#modal2"><i class="material-icons">add_to_photos</i></a></li>
-                <li class="waves-effect waves-light"><a class="modal-trigger view-profile-btn" href="#modal1"><i class="material-icons">account_box</i></a></li>
-                <li class="waves-effect waves-light"><a class="signout-btn"><i class="material-icons">exit_to_app</i></a></li>
-            </ul>
-        </div>
-        
         <div class="row heading">
-            <div class="col s12 ">
+            <div class="col s12 heading">
                 A<span>Good</span>BookToRead
             </div>
         </div>
         
-        <div class="row heading-description">
-            <div class="col s6 offset-s3">
-                We find you great books that you haven’t yet read, decisively ending the interminable hours of “what are we gonna read” currently plaguing our world!
-            </div>
-        </div>
-        
         <div class="row">
-            <div class="col s12">
-                <div class="carousel">
-                    <a class="carousel-item" href="#one!"><img src="img/GameOfThrones.jpg"></a>
-                    <a class="carousel-item" href="#two!"><img src="img/harry%20potter.webp"></a>
-                    <a class="carousel-item" href="#three!"><img src="img/hobbit.jpg"></a>
-                    <a class="carousel-item" href="#four!"><img src="img/The_Da_Vinci_Code.jpg"></a>
-                    <a class="carousel-item" href="#five!"><img src="img/wimpy%20kid.jpg"></a>
+            <div class="col s10 offset-s1">
+                <div class="row">
+                    <div class="col s12 card-panel hoverable">
+                        <ul id="tabs-swipe-demo" class="tabs">
+                            <li class="tab col s5"><a class="active" href="#sign-up">Sign Up</a></li>
+                            <li class="tab col s5"><a href="#log-in">Log In</a></li>
+                        </ul>
+                    </div>
+                    <div id="sign-up" class="col s12 card-panel hoverable">
+                        
+                        <div class="row sign-up-form">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s4">
+                                        <input id="email" type="email" class="validate">
+                                        <label for="email" data-error="wrong" data-success="right">Email</label>
+                                    </div>
+                                    <!--                <div class="row">-->
+                                    <div class="input-field col s4">
+                                        <input id="password" type="password" class="validate">
+                                        <label for="password">Password</label>
+                                    </div>
+                                    <!--                </div>-->
+                                    <div class="input-field col s4">
+                                        <input id="user_name" type="text" class="validate">
+                                        <label for="user_name">Username</label>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s4">
+                                        <input id="first_name" type="text" class="validate">
+                                        <label for="first_name">First Name</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input id="last_name" type="text" class="validate">
+                                        <label for="last_name">Last Name</label>
+                                    </div>
+                                    <!--                <div class="row">-->
+                                    <div class="input-field col s4 select-menu">
+                                        <select>
+                                            <option value="" disabled selected>Choose your option</option>
+                                            <option value="Reader">Reader</option>
+                                            <option value="Author">Author</option>
+                                        </select>
+                                        <label>Account Type</label>
+                                    </div>
+                                </div>
+                                <a class="waves-effect waves-light btn signup-btn">Sign Up</a>
+                            </form>
+                        </div> 
+                        
+                    </div>
+                    <div id="log-in" class="col s12 card-panel hoverable">
+                        
+                        <div class="row log-in-form">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <input id="email" type="email" class="validate">
+                                        <label for="email" data-error="wrong" data-success="right">Email</label>
+                                    </div>
+                                    <!--                <div class="row">-->
+                                    <div class="input-field col s6">
+                                        <input id="password" type="password" class="validate">
+                                        <label for="password">Password</label>
+                                    </div>
+                                    <!--                </div>-->
+                                </div>
+                                <a class="waves-effect waves-light btn login-btn">Log In</a>
+                            </form>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
+        
+        
+        
+        
         
 <!--
         <div class="row">
@@ -61,14 +112,11 @@
                 <a class="waves-effect waves-light btn signout-btn">Sign Out</a>
             </div>
         </div>
--->
         
         <div class="row">
             <div class="col s12">
-                <!-- Modal Trigger -->
-<!--                <a class="waves-effect waves-light btn modal-trigger view-profile-btn" href="#modal1">View Profile</a>-->
+                <a class="waves-effect waves-light btn modal-trigger view-profile-btn" href="#modal1">View Profile</a>
                 
-                <!-- Modal Structure -->
                 <div id="modal1" class="modal">
                     <div class="modal-content">
                         <h4>Your Profile</h4>
@@ -85,10 +133,8 @@
         
         <div class="row">
             <div class="col s12">
-                <!-- Modal Trigger -->
-<!--                <a class="waves-effect waves-light btn modal-trigger add-book-btn" href="#modal2">Add Book</a>-->
+                <a class="waves-effect waves-light btn modal-trigger add-book-btn" href="#modal2">Add Book</a>
                 
-                <!-- Modal Structure -->
                 <div id="modal2" class="modal">
                     <div class="modal-content">
                         <form>
@@ -140,20 +186,16 @@
             </div>
         </div>
         
-<!--
         <div class="row">
             <div class="col s12">
                 <a class="waves-effect waves-light btn show-all-books-btn">Show all books</a>
             </div>
         </div>
--->
         
         <div class="row">
             <div class="col s12">
-                <!-- Modal Trigger -->
-<!--                <a class="waves-effect waves-light btn modal-trigger filter-btn" href="#modal3">Filter</a>-->
+                <a class="waves-effect waves-light btn modal-trigger filter-btn" href="#modal3">Filter</a>
                 
-                <!-- Modal Structure -->
                 <div id="modal3" class="modal">
                     <div class="modal-content">
                         <h4>Filter</h4>
@@ -201,25 +243,17 @@
                 </div>
             </div>
         </div>
+-->
         
         
         <script>
             $(document).ready(function() {
                 $('select').material_select();
                 $('.modal').modal();
-                $('.carousel').carousel();
             });
         </script>
         <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
         <script src="firebaseInit.js"></script>
-        <script src="profile.js"></script>
-        <script src="sign-out.js"></script>
-        <script src="view-profile.js"></script>
-        <script src="fetch-books.js"></script>
-        <script src="render-books.js"></script>
-        <script src="db-write-book.js"></script>
-        <script src="add-book.js"></script>
-        <script src="star-fav.js"></script>
-        
+        <script src="auth.js"></script>
     </body>
 </html>
