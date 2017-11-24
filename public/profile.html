@@ -224,6 +224,32 @@
                         <br />
                         <div class="book-modal-description center-align"></div>
                         <div class="book-modal-star center-align"><span></span> people <i class="material-icons">star_border</i>'d this book</div>
+                        
+                        <div class="reviews-head">Reviews</div>
+                        <div class="reviews-section">
+                            <ul class="collapsible popout review-list" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">perm_identity</i>John Doe</div>
+                                    <div class="collapsible-body"><span>A must read for all!</span></div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">perm_identity</i>Michael</div>
+                                    <div class="collapsible-body"><span>Really good book, touches the soul.</span></div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">perm_identity</i>Kunal</div>
+                                    <div class="collapsible-body"><span>Good story, good writing.</span></div>
+                                </li>
+                            </ul>
+                                <br />
+                                <form>
+                                    <div class="input-field">
+                                        <textarea id="review-textarea" class="materialize-textarea"></textarea>
+                                        <label for="review-textarea">Review</label>
+                                    </div>
+                                    <a class="waves-effect waves-light btn submit-review-btn">Submit</a>
+                                </form>
+                        </div>
                     </div>
                 </div>            
             </div>
@@ -249,6 +275,7 @@
         <script src="add-book.js"></script>
         <script src="star-fav.js"></script>
         <script src="book-details.js"></script>
+        <script src="add-review.js"></script>
         
     </body>
 </html>
